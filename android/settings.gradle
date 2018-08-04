@@ -1,0 +1,3 @@
+rootProject.name = 'reagent_app'
+
+include ':app'
