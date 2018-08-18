@@ -4,10 +4,10 @@ import { Text,View,ScrollView,Image } from 'react-native'
 
 export default class extends React.Component {
     static navigationOptions = {
-        title: '小轩的实验室app',
-        tabBarLabel:"主页",
+        header:null,
+        tabBarLabel:"我",
         tabBarIcon: ({ focused }) => (
-            <Image style={{width:25,height:25}} source={focused ? require('../images/home31.png') : require('../images/home3.png')} />
+            <Image style={{width:25,height:25}} source={focused ? require('../images/user1.png') : require('../images/user.png')} />
         )
     };
     render() {
