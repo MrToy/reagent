@@ -79,7 +79,7 @@ export default class extends React.Component {
     render() {
         return (
             <View>
-                <View style={{ backgroundColor: "#58ADFF",paddingTop:40}}>
+                <View style={{ backgroundColor: "#58ADFF",paddingTop:30}}>
                     <View style={{ flexDirection: "row",paddingHorizontal:20,alignItems:"center" }}>
                         <Touchable style={{marginRight:20}}>
                             <Image style={{width:scale(25),height:scale(25)}} source={require('../images/plus.png')} />

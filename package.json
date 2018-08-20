@@ -14,6 +14,7 @@
   "dependencies": {
     "react": "16.4.1",
     "react-native": "0.56.0",
+    "react-native-linear-gradient": "^2.4.0",
     "react-native-platform-touchable": "^1.1.1",
     "react-navigation": "^2.8.0"
   },
