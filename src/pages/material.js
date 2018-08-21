@@ -10,8 +10,8 @@ const StateMap = {
     2: 'Run Out'
 }
 
-const MaterialItem = ({ uri, name, enName, status, shortname, mf, mw }) => (
-    <Touchable>
+const MaterialItem = ({ uri, name, enName, status, shortname, mf, mw,onPress }) => (
+    <Touchable onPress={onPress}>
         <View style={{ flexDirection: "row", padding: 10, alignItems: "center" }}>
             <Image source={{ uri }} style={{ width: scale(80), height: scale(80), marginRight: 10 }} />
             <View style={{ flex: 1 }}>
@@ -148,7 +148,7 @@ export default class extends React.Component {
                     <FlatList
                         style={{ width: windowWidth }}
                         data={testData}
-                        renderItem={({ item }) => <MaterialItem {...item} />} />
+                        renderItem={({ item }) => <MaterialItem {...item} onPress={()=>this.props.navigation.navigate('MaterialInfo')} />} />
                     <FlatList
                         style={{ width: windowWidth }}
                         data={testData}

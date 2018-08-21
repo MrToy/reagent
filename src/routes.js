@@ -1,12 +1,18 @@
 import { createBottomTabNavigator, createStackNavigator,createSwitchNavigator } from 'react-navigation';
-import Home from './pages/home'
-import Material from './pages/material'
-import User from './pages/user'
-import Login from './pages/login'
+import Home from './pages/Home'
+import Material from './pages/Material'
+import User from './pages/User'
+import Login from './pages/Login'
 import AuthLoading from './pages/AuthLoading'
 import AddReagent from './pages/AddReagent'
 import AddInstrument from './pages/AddInstrument'
 import AddMaterial from './pages/AddMaterial'
+import MemberGroup from './pages/MemberGroup'
+import MemberInfo from './pages/MemberInfo'
+import UserInfo from './pages/UserInfo'
+import InstrumentInfo from './pages/InstrumentInfo'
+import MaterialInfo from './pages/MaterialInfo'
+import ReagentInfo from './pages/ReagentInfo'
 
 const TabScreens = createBottomTabNavigator({
 	Home,
@@ -34,8 +40,14 @@ TabScreens.navigationOptions = ({ navigation }) => {
 const AppStack = createStackNavigator({
 	Main: TabScreens,
 	AddReagent,
+	ReagentInfo,
 	AddInstrument,
-	AddMaterial
+	InstrumentInfo,
+	AddMaterial,
+	MaterialInfo,
+	MemberGroup,
+	MemberInfo,
+	UserInfo,
 },{
 	navigationOptions:{
 		headerStyle: {
