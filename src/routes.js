@@ -15,6 +15,7 @@ import MaterialInfo from './pages/Material/MaterialInfo'
 import ReagentInfo from './pages/Material/ReagentInfo'
 import Annocement from './pages/Annocement'
 import AddAnnocement from './pages/Annocement/AddAnnocement'
+import { scale } from './utils/dimension'
 
 
 const TabScreens = createBottomTabNavigator({
@@ -29,6 +30,10 @@ const TabScreens = createBottomTabNavigator({
 				fontSize: 12,
 				marginBottom: 2
 			},
+			style:{
+				paddingVertical:scale(2),
+				height:scale(50)
+			}
 		}
 	})
 

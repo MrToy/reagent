@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ScrollView, Image } from 'react-native'
+import { Text, View, ScrollView, Image,StatusBar } from 'react-native'
 import { scale } from '../utils/dimension';
 import PlatformTouchable from 'react-native-platform-touchable';
 import LinearGradient from 'react-native-linear-gradient'
@@ -10,12 +10,13 @@ export default class extends React.Component {
         title: '化学发光与电化学发光实验室',
         tabBarLabel: "主页",
         tabBarIcon: ({ focused }) => (
-            <Image style={{ width: 25, height: 25 }} source={focused ? require('../images/home31.png') : require('../images/home3.png')} />
+            <Image style={{ width: scale(24), height: scale(24) }} source={focused ? require('../images/home31.png') : require('../images/home3.png')} />
         )
     };
     render() {
         return (
             <View style={{ padding: 20,flex:1,backgroundColor:"#fff" }}>
+                <StatusBar backgroundColor="#58ADFF" />
                 <Text style={{ fontSize: scale(24), lineHeight: scale(32) }}>欢迎您，小轩～</Text>
                 <Text style={{ fontSize: scale(24), lineHeight: scale(32), marginTop: scale(11) }}>信息公告:</Text>
                 <View style={{ height:300,marginVertical: 10, padding: 10, borderRadius: 4,  backgroundColor: "#fff", shadowOpacity: 0.2, shadowRadius: 10 }}>

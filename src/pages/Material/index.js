@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text, View, FlatList, Image, TextInput, TouchableWithoutFeedback, ScrollView, Dimensions } from 'react-native'
+import { Text, View, FlatList, Image, TextInput, TouchableWithoutFeedback, ScrollView, Dimensions,StatusBar } from 'react-native'
 import Touchable from 'react-native-platform-touchable';
 import { scale } from '../../utils/dimension'
-import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 
 const StateMap = {
     0: 'Normal',
@@ -182,7 +181,7 @@ export default class extends React.Component {
         header: null,
         tabBarLabel: "实验用品",
         tabBarIcon: ({ focused }) => (
-            <Image style={{ width: 25, height: 25 }} source={focused ? require('../../images/lab1.png') : require('../../images/lab.png')} />
+            <Image style={{ width: scale(24), height: scale(24) }} source={focused ? require('../../images/lab1.png') : require('../../images/lab.png')} />
         )
     }
     state = {
@@ -203,9 +202,10 @@ export default class extends React.Component {
     }
     onScroll(e) {
         const windowWidth = Dimensions.get('window').width
-        var contentOffsetX = e.nativeEvent.contentOffset.x
+        var contentOffsetX = e.nativeEvent.contentOffset.x+1
         var cellIndex = Math.floor(contentOffsetX / windowWidth)
         if (cellIndex < 0) cellIndex = 0
+        console.log(contentOffsetX,windowWidth,cellIndex)
         this.setState({ tab: cellIndex })
     }
     setTab(i) {
@@ -217,9 +217,10 @@ export default class extends React.Component {
     }
     render() {
         const windowWidth = Dimensions.get('window').width
+        const statusHeight=StatusBar.currentHeight||0
         return (
             <View style={{ height: "100%" }}>
-                <View style={{ backgroundColor: "#58ADFF", paddingTop: 20 }}>
+                <View style={{ backgroundColor: "#58ADFF", paddingTop: 20-statusHeight }}>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <Touchable onPress={this.add.bind(this)}>
                             <View style={{ paddingHorizontal: 20,paddingVertical:10 }}>
@@ -228,7 +229,7 @@ export default class extends React.Component {
                         </Touchable>
                         <TextInput placeholder="Search" returnKeyType="search" style={{ color: "#fff", flex: 1, fontSize: 18 }} placeholderTextColor="#fff" />
                         <Touchable>
-                            <View style={{ paddingHorizontal: 20,paddingVertical:5 }}>
+                            <View style={{ paddingHorizontal: 20,paddingVertical:10 }}>
                                 <Image style={{ width: scale(25), height: scale(25) }} source={require('../../images/search.png')} />
                             </View>
                         </Touchable>
