@@ -4,6 +4,9 @@ import Material from './pages/material'
 import User from './pages/user'
 import Login from './pages/login'
 import AuthLoading from './pages/AuthLoading'
+import AddReagent from './pages/AddReagent'
+import AddInstrument from './pages/AddInstrument'
+import AddMaterial from './pages/AddMaterial'
 
 const TabScreens = createBottomTabNavigator({
 	Home,
@@ -29,7 +32,17 @@ TabScreens.navigationOptions = ({ navigation }) => {
 }
 
 const AppStack = createStackNavigator({
-	Main: TabScreens
+	Main: TabScreens,
+	AddReagent,
+	AddInstrument,
+	AddMaterial
+},{
+	navigationOptions:{
+		headerStyle: {
+			backgroundColor: '#58ADFF',
+		},
+		headerTintColor: '#fff',
+	}
 })
 
 const AuthStack = createStackNavigator({
