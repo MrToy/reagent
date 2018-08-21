@@ -36,7 +36,7 @@ export default class extends React.Component {
                     </TouchableWithoutFeedback>
                 </View>
                 <View style={{ flex: 1 }}>
-                    <PlatformTouchable>
+                    <PlatformTouchable onPress={() => this.props.navigation.navigate('Annocement')}>
                         <LinearGradient colors={['#C66CD6', '#7024AE']} style={[styles.btnBox, { top: scale(65), left: scale(30), width: scale(121), height: scale(117) }]}>
                             <Text style={styles.btnText}>实验室通知与用品修改记录</Text>
                         </LinearGradient>
@@ -46,7 +46,7 @@ export default class extends React.Component {
                             <Text style={styles.btnText}>实验室成员信息</Text>
                         </LinearGradient>
                     </PlatformTouchable>
-                    <PlatformTouchable>
+                    <PlatformTouchable onPress={() => this.props.navigation.navigate('AddAnnocement')}>
                         <LinearGradient colors={['#EFC934', '#C15224']} style={[styles.btnBox, { top: scale(139), left: scale(191), width: scale(161), height: scale(90) }]}>
                             <Text style={styles.btnText}>发布实验室通告</Text>
                         </LinearGradient>

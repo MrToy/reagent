@@ -15,13 +15,13 @@ export default class extends React.Component {
     };
     render() {
         return (
-            <View style={{ padding: 20,flex:1 }}>
+            <View style={{ padding: 20,flex:1,backgroundColor:"#fff" }}>
                 <Text style={{ fontSize: scale(24), lineHeight: scale(32) }}>欢迎您，小轩～</Text>
                 <Text style={{ fontSize: scale(24), lineHeight: scale(32), marginTop: scale(11) }}>信息公告:</Text>
-                <View style={{ height:300,marginVertical: 10, padding: 10, borderRadius: 4,  backgroundColor: "#e9e9ee", shadowOpacity: 0.2, shadowRadius: 10 }}>
+                <View style={{ height:300,marginVertical: 10, padding: 10, borderRadius: 4,  backgroundColor: "#fff", shadowOpacity: 0.2, shadowRadius: 10 }}>
                     <Text>xxxx添加了xxxxxxxx储量低</Text>
                 </View>
-                <PlatformTouchable>
+                <PlatformTouchable onPress={() => this.props.navigation.navigate('Annocement')}>
                     <LinearGradient colors={['#40B9E8', '#41A8EC', '#319ABC',]} style={{ backgroundColor: "#58ADFF",paddingVertical:3, paddingHorizontal: 10, marginTop: 10, borderRadius: 8, alignItems: "flex-end" }}>
                         <Text style={{ color: "#fff",fontSize: scale(24), lineHeight: scale(32) }}>More</Text>
                     </LinearGradient>

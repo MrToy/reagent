@@ -13,6 +13,9 @@ import UserInfo from './pages/UserInfo'
 import InstrumentInfo from './pages/Material/InstrumentInfo'
 import MaterialInfo from './pages/Material/MaterialInfo'
 import ReagentInfo from './pages/Material/ReagentInfo'
+import Annocement from './pages/Annocement'
+import AddAnnocement from './pages/Annocement/AddAnnocement'
+
 
 const TabScreens = createBottomTabNavigator({
 	Home,
@@ -48,6 +51,8 @@ const AppStack = createStackNavigator({
 	MemberGroup,
 	MemberInfo,
 	UserInfo,
+	Annocement,
+	AddAnnocement,
 },{
 	navigationOptions:{
 		headerStyle: {
