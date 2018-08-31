@@ -1,9 +1,9 @@
 import React from 'react';
-import { AsyncStorage, ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PlatformTouchable from 'react-native-platform-touchable';
-import { scale } from '../utils/dimension';
 import { withUser } from '../lib/User';
+import { scale } from '../utils/dimension';
 
 
 const GradientButton = ({children,onPress,colors}) => (

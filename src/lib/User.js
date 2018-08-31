@@ -17,6 +17,19 @@ export class AuthProvider extends React.Component {
             ...defaultState,
             login: this.login.bind(this),
             logout: this.logout.bind(this),
+            init:this.init.bind(this),
+        }
+    }
+    async init(){
+        const token = await AsyncStorage.getItem('userToken')
+        if(token){
+            this.setState({
+                isLogin: true,
+                token
+            })
+            return true
+        }else{
+            return false
         }
     }
     async login(id, pass) {

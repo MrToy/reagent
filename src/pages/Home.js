@@ -1,11 +1,13 @@
 import React from 'react';
-import { Text, View, ScrollView, Image,StatusBar } from 'react-native'
-import { scale } from '../utils/dimension';
+import { Image, StatusBar, Text, View } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import PlatformTouchable from 'react-native-platform-touchable';
-import LinearGradient from 'react-native-linear-gradient'
+import { withUser } from '../lib/User';
+import { scale } from '../utils/dimension';
+import request from '../utils/request';
 
 
-export default class extends React.Component {
+class HomePage extends React.Component {
     static navigationOptions = {
         title: '化学发光与电化学发光实验室',
         tabBarLabel: "主页",
@@ -13,6 +15,19 @@ export default class extends React.Component {
             <Image style={{ width: scale(24), height: scale(24) }} source={focused ? require('../images/home31.png') : require('../images/home3.png')} />
         )
     };
+    state={
+        notices:[]
+    }
+    componentDidMount(){
+        this.fetchNotice()
+    }
+    async fetchNotice(){
+        let res=await request("http://47.93.216.141:8080/chemanager/ajax_getNotice.action",{
+            token:this.props.user.token,
+            num:5
+        })
+        console.log(res)
+    }
     render() {
         return (
             <View style={{ padding: 20,flex:1,backgroundColor:"#fff" }}>
@@ -31,3 +46,5 @@ export default class extends React.Component {
         )
     }
 }
+
+export default withUser(HomePage)
