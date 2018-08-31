@@ -12,6 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "hoist-non-react-statics": "^3.0.1",
     "react": "16.4.1",
     "react-native": "0.56.0",
     "react-native-linear-gradient": "^2.4.0",

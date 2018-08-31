@@ -1,7 +1,5 @@
 import React from 'react';
-import { View ,ScrollView} from 'react-native';
-import FormButton from '../../lib/FormButton';
-import FormInput from '../../lib/FormInput';
+import { ScrollView } from 'react-native';
 
 
 export default class extends React.Component {

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Alert, AsyncStorage, View, ScrollView,StatusBar } from 'react-native';
+import { Alert, ScrollView, StatusBar, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { scale } from '../utils/dimension';
 import FormButton from '../lib/FormButton';
 import FormInput from '../lib/FormInput';
+import { withUser } from '../lib/User';
+import { scale } from '../utils/dimension';
 
-export default class extends React.Component {
+class LoginPage extends React.Component {
     static navigationOptions = {
         header: null,
     }
@@ -14,11 +15,12 @@ export default class extends React.Component {
         password: ""
     }
     async login() {
-        if (this.state.id != "xiaoxuan" || this.state.password != "xiaoxuan") {
-            Alert.alert("账号或密码错误")
+        try {
+            await this.props.user.login(this.state.id, this.state.password)
+        } catch (err) {
+            Alert.alert(err.message)
             return
         }
-        await AsyncStorage.setItem('userToken', "xiaoxuan");
         this.props.navigation.navigate('App')
     }
     render() {
@@ -39,3 +41,7 @@ export default class extends React.Component {
         )
     }
 }
+
+const LoginPageWithUser = withUser(LoginPage)
+
+export default LoginPageWithUser
